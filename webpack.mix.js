@@ -4,7 +4,7 @@ const LiveReloadPlugin = require('webpack-livereload-plugin')
 mix
   .setPublicPath('assets')
   .setResourceRoot('../')
-  .sass( 'source/sass/style.scss', 'assets/css' )
+  .sass( 'source/sass/styles.sass', 'assets/css' )
   .js( 'source/js/main.js', 'assets/js' )
   .options({
     processCssUrls: true

@@ -4,15 +4,29 @@ security = "all"
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-  <!-- start:css -->
-  <!-- end:css -->
+    <meta charset="utf-8">
+    <title>Энциклопедия фантастических вселенных</title>
+    <meta name="description" content="">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="OctoberCMS">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.ico'|theme }}">
+    <link href="{{ ['assets/css/style.css']|theme }}" rel="stylesheet">
+    {% styles %}
   </head>
+
   <body id="app">
-    {% page %}
+    <div class="wrapper">
+      <div class="overlay"></div>
+      <main>
+        {% page %}
+      </main>
+    </div>
+    
     <!-- Custom Theme Scripts -->
-    <!-- start:js -->
-    <script src="js/index.9afbbaf4a0a64f6977f1.js"></script>
-    <!-- end:js -->
+    <script src="{{ ['assets/js/main.js']|theme }}"></script>
+    <script src="http://localhost:8888/livereload.js"></script>
     {% framework extras %}
     {% scripts %}
   </body>
