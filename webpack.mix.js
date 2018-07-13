@@ -12,9 +12,13 @@ let mix = require('laravel-mix');
  */
 
 mix.setPublicPath('assets')
+    .setResourceRoot('../')
 
 mix.js('./source/js/main.js', 'js')
-   .sass('./source/sass/styles.sass', 'css');
+   .sass('./source/sass/styles.sass', 'css')
+   .options({
+     processCssUrls: true
+    })
    
 mix.browserSync({
     proxy: 'fw.octobercms.loc',
