@@ -1,0 +1,17 @@
+title = "universe"
+url = "/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "fw\Backend\Models\Universe"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+==
+{% component 'builderDetails' %}
+</div>
+
+<div class="page__info-sidebar sidebar">
+sidebar

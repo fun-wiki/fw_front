@@ -3197,7 +3197,7 @@ table {
 
 body {
   background-color: #2C2F34;
-  color: #93A4AB;
+  color: #666666;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
@@ -3207,6 +3207,44 @@ body {
 *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+h1 {
+  font-size: 37.3324px;
+  color: #333333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 26.666px;
+  color: #333333;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 18.6662px;
+  color: #333333;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18.6662px;
+  color: #666666;
+  font-weight: 300;
+  line-height: 27.9993px;
+  text-indent: 18.6662px;
+  margin-bottom: 37.3324px;
+}
+
+.sidebar p {
+  font-size: 15.9996px;
+  color: #666666;
+  line-height: 23.9994px;
+  text-indent: 0;
+  margin-bottom: 31.9992px;
 }
 
 strong {
@@ -3227,7 +3265,7 @@ ul {
 }
 
 .wrapper {
-  background-color: #434A54;
+  background-color: #ffffff;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3343,7 +3381,7 @@ header {
   z-index: 1060;
   width: 260px;
   height: 100vh;
-  background: #434A54;
+  background: #ffffff;
   -webkit-box-shadow: 6px 0px 10px 0px rgba(0, 0, 0, 0.25);
           box-shadow: 6px 0px 10px 0px rgba(0, 0, 0, 0.25);
   display: block;
@@ -3380,7 +3418,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #434A54;
+  background-color: #ffffff;
 }
 
 @media (min-width: 1200px) {
@@ -3435,7 +3473,7 @@ footer {
   width: 260px;
   height: 160px;
   display: none;
-  background-color: #434A54;
+  background-color: #ffffff;
   z-index: 2;
 }
 
@@ -3461,7 +3499,7 @@ footer {
 .main-logo__title {
   position: absolute;
   top: 90px;
-  color: #ffffff;
+  color: #999999;
   font-size: 10.6664px;
   display: block;
   width: 100%;
@@ -3471,7 +3509,7 @@ footer {
 
 @media (min-width: 1440px) {
   .main-logo__title {
-    font-size: 11.9997px;
+    font-size: 13.333px;
   }
 }
 
@@ -3518,12 +3556,12 @@ footer {
 .quickinfo__info span {
   font-size: 13px;
   line-height: 30px;
-  color: #93A4AB;
+  color: #666666;
 }
 
 .quickinfo__info h2 {
   font-size: 15px;
-  color: #ffffff;
+  color: #999999;
   margin: 0;
 }
 
@@ -3546,7 +3584,7 @@ footer {
   display: flex;
   -ms-flex-line-pack: distribute;
       align-content: space-around;
-  color: #93A4AB;
+  color: #666666;
   text-decoration: none;
 }
 
@@ -3606,7 +3644,8 @@ footer {
 }
 
 .main-menu span {
-  font-size: 18px;
+  font-size: 15.9996px;
+  color: #666666;
   line-height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3617,11 +3656,11 @@ footer {
 
 .main-menu .active {
   background: url(../images/left-menu-hover.png?5ed0d82c26b8f9bc0dc18a2686d644ca) repeat-y;
-  color: #ffffff;
+  color: #999999;
 }
 
 .navbar {
-  background: #434A54;
+  background: #ffffff;
   border: 0;
   -webkit-box-shadow: 0 0px 15px black;
           box-shadow: 0 0px 15px black;
@@ -3713,8 +3752,8 @@ footer {
   }
 }
 
-.footer-copyright__text p {
-  color: white;
+.footer-copyright__text span {
+  color: #ffffff;
   display: inline-block;
   text-align: right;
   min-width: 200px;
@@ -3835,13 +3874,13 @@ footer {
   }
 }
 
-.page__title h1 {
+.page__title span {
   margin: 0;
   padding: 0;
-  font-size: 20px;
+  font-size: 21.3328px;
   line-height: 60px;
   font-weight: 300;
-  color: #ffffff;
+  color: #999999;
 }
 
 .page__content {
@@ -3853,7 +3892,7 @@ footer {
   font-size: 16px;
   line-height: 24px;
   min-height: calc(100vh - 280px);
-  color: #93A4AB;
+  color: #666666;
   font-weight: 300;
 }
 
@@ -4013,7 +4052,7 @@ footer {
   height: 30px;
   margin-right: 8px;
   font-size: 16px;
-  background: #93A4AB;
+  background: #666666;
   color: white;
   vertical-align: center;
   padding: 7px;
@@ -4057,7 +4096,7 @@ footer {
 }
 
 .inline-info__title {
-  color: #ffffff;
+  color: #999999;
   font-size: 14px;
 }
 
@@ -4068,7 +4107,7 @@ footer {
 }
 
 .inline-info__description {
-  color: #93A4AB;
+  color: #666666;
   font-weight: 400;
   font-size: 14px;
   margin-left: 5px;
@@ -4108,7 +4147,7 @@ footer {
 }
 
 .inline-item__icon {
-  color: #ffffff;
+  color: #999999;
   font-size: 30px;
 }
 
@@ -4119,7 +4158,7 @@ footer {
 }
 
 .inline-item__title {
-  color: #93A4AB;
+  color: #666666;
   font-size: 14px;
   line-height: 30px;
   margin-left: 20px;
@@ -4145,8 +4184,8 @@ footer {
 }
 
 .universe-cover__shadow {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(90%, #434A54));
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #434A54 90%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(90%, #ffffff));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 90%);
   width: 100%;
   height: 50%;
   position: absolute;
@@ -4156,8 +4195,8 @@ footer {
 @media (max-width: 426px) {
   .universe-cover__shadow {
     height: 60%;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(50%, #434A54), to(#434A54));
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #434A54 50%, #434A54 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(50%, #ffffff), to(#ffffff));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 50%, #ffffff 100%);
   }
 }
 
@@ -4184,7 +4223,7 @@ footer {
 
 .content-title {
   margin-bottom: 40px;
-  color: #93A4AB;
+  color: #666666;
 }
 
 @media (max-width: 426px) {
@@ -4216,7 +4255,7 @@ footer {
   font-size: 28px;
   line-height: 12px;
   font-weight: 400;
-  color: #93A4AB;
+  color: #666666;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4242,7 +4281,7 @@ footer {
 .content-title__subtitle {
   font-size: 14px;
   line-height: 0px;
-  color: #ffffff;
+  color: #999999;
 }
 
 @media (max-width: 426px) {
@@ -4262,10 +4301,7 @@ footer {
 }
 
 .sidebar-title {
-  font-size: 18px;
-  color: #ffffff;
   margin: 40px 0;
-  font-weight: 400;
 }
 
 .sidebar-sticky-top {
@@ -4283,7 +4319,7 @@ footer {
   font-weight: 400;
   margin-bottom: 40px;
   text-align: center;
-  color: #ffffff;
+  color: #999999;
 }
 
 .universe-card {
@@ -4317,7 +4353,7 @@ footer {
 }
 
 .universe-card-info__left .subtitle {
-  color: #ffffff;
+  color: #999999;
   font-size: 12px;
   line-height: 12px;
   height: 20px;
@@ -4333,10 +4369,6 @@ footer {
   font-family: 'icomoon' !important;
   content: "\E906";
   margin-right: 10px;
-}
-
-h1 {
-  color: blue;
 }
 
 .circle {
