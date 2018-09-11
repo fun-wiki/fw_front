@@ -1,0 +1,13 @@
+title = "author"
+url = "/author/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "fw\Backend\Models\Person"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+==
+{% component 'builderDetails' %}
