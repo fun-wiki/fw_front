@@ -1,0 +1,17 @@
+title = "universes"
+url = "/universes"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "fw\Backend\Models\Universe"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "universe"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+==
+{% component 'builderList' %}
