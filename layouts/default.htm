@@ -1,13 +1,15 @@
 [session]
 security = "all"
+
 ==
+
 <!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>Энциклопедия фантастических вселенных</title>
     <meta name="description" content="">
-    <meta name="title" content="">
+    <meta name="title" content="{{ shema_type }}">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="OctoberCMS">
@@ -95,11 +97,14 @@ security = "all"
           <i class="fa fa-bars open_btn"></i>
         </div>
       </nav>
-      <div class="page__title"><span>Главная</span></div>
+      <div class="page__title"><span>{{ page_title }}</span></div>
       <div class="page__content-title"></div>
       <div class="page__content">
       <div class="page__main-content">
         {% page %}
+      </div>
+      <div class="page__info-sidebar sidebar">
+        {% partial info_type data=record %}
       </div>
         
         <div class="page__adv-sidebar sidebar-sticky-top">
