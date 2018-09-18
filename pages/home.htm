@@ -14,6 +14,11 @@ detailsKeyColumn = "slug"
 detailsUrlParameter = "slug"
 pageNumber = "{{ :page }}"
 ==
+function onStart()
+{
+    $this['page_title'] = "Главная";
+}
+==
 {% set records = UniverseList.records %}
 {% set displayColumn = UniverseList.displayColumn %}
 {% set noRecordsMessage = UniverseList.noRecordsMessage %}

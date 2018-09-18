@@ -47,7 +47,7 @@ security = "all"
               </a>
             </li>
             <li>
-              <a class="main-menu__item" href="universes">
+              <a class="main-menu__item" href="/universes">
                 <i class="main-menu__icon fa"></i>
                 <span>Вселенные</span>
               </a>
@@ -77,9 +77,24 @@ security = "all"
               </ul>
             </li>
             <li>
-              <a class="main-menu__item" href="design.html">
+              <li class="main-menu__item main-menu__item-dropdown">
+                <i class="main-menu__icon fa"></i>
+                <span>Создатели</span>
+                <i class="main-menu__icon-dropdown fa fa-chevron-down"></i>
+              </li>
+              <ul class="inner">
+                <a class="main-menu__item" href="/authors">
+                  <span>Авторы</span>
+                </a>
+                <li class="main-menu__item">
+                  <span>Компании</span>
+                </li>
+              </ul>
+            </li>            
+            <li>
+              <a class="main-menu__item" href="/authors">
                 <i class="main-menu__icon fa fa-css3"></i>
-                <span>Дизайн</span>
+                <span>Авторы</span>
               </a>
             </li>
           </ul>
@@ -104,7 +119,9 @@ security = "all"
         {% page %}
       </div>
       <div class="page__info-sidebar sidebar">
+      {% if partial_info is defined %}
         {% partial info_type data=record %}
+      {% endif %}
       </div>
         
         <div class="page__adv-sidebar sidebar-sticky-top">
@@ -156,8 +173,9 @@ security = "all"
   </div>
   <div class="overlay"></div>
 
-
-  {% partial shema_type data=record %}
+  {% if shema_type is defined%}
+    {% partial shema_type data=record %}
+  {% endif %}
 
   <!-- Custom Theme Scripts -->
   <script src="{{ ['assets/js/main.js']|theme }}"></script>

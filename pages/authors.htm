@@ -14,4 +14,9 @@ detailsKeyColumn = "slug"
 detailsUrlParameter = "slug"
 pageNumber = "{{ :page }}"
 ==
+function onStart()
+{
+    $this['page_title'] = "Авторы";
+}
+==
 {% component 'builderList' %}
