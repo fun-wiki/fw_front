@@ -3,3 +3,22 @@ description: 'front-end theme by fun-wiki site'
 author: CRYDEsigN
 homepage: ''
 code: ''
+
+form:
+    fields:
+        vk:
+            label: VK
+            comment: 
+            default: https://vk.com/club70589631
+        facebook:
+            label: Facebook
+            comment: 
+            default: https://www.facebook.com/f.universe.wiki
+        twitter:
+            label: Twitter
+            comment: 
+            default: https://twitter.com/Cryden_DA
+        googleplus:
+            label: Google+
+            comment: 
+            default: https://plus.google.com/communities/103562344691804150752
