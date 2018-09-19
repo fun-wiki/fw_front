@@ -20,17 +20,17 @@ function onStart()
 
 {% if record %}
 <div class="person">
-  <h1> {{ record.title }} </h1>
+  <h1> {{ record.title|person }} </h1>
   <div class="subheader"> {{ record.name }} </div>
   {% if record.pseudos %}
     Псевдонимы:
     {% for pseudo in record.pseudos %}
-      {{ pseudo.title }}
+      {{ pseudo.title|person }}
     {% endfor %}
   {% endif %}
   {% if record.persons %}
     {% for person in record.persons %}
-      {{ person.title }}
+      {{ person.title|person }}
     {% endfor %}
   {% endif %}
   {% if record.is_author %}
