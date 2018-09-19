@@ -1,30 +1,53 @@
+;;
+
 title = "author"
 url = "/author/:slug"
 layout = "default"
 is_hidden = 0
 
-[builderDetails]
-modelClass = "fw\Backend\Models\Person"
-identifierValue = "{{ :slug }}"
-modelKeyColumn = "slug"
-displayColumn = "title"
-notFoundMessage = "Record not found"
-
 ==
+use fw\Backend\Models\Person as Person;
+
 function onStart()
 {
     $this['shema_type'] = "person/shema";
     $this['info_type']  = "person/info";
     $this['page_title'] = "Автор";
+    $this['record'] = Person::where('slug', '=', $this->param('slug'))->first();
 }
 ==
-
-{% set record = builderDetails.record %}
-{% set displayColumn = builderDetails.displayColumn %}
-{% set notFoundMessage = builderDetails.notFoundMessage %}
+{##}
 
 {% if record %}
-    {{ attribute(record, displayColumn) }}
-{% else %}
-    {{ notFoundMessage }}
+<div class="person">
+  <h1> {{ record.title }} </h1>
+  <div class="subheader"> {{ record.name }} </div>
+  {% if record.pseudos %}
+    Псевдонимы:
+    {% for pseudo in record.pseudos %}
+      {{ pseudo.title }}
+    {% endfor %}
+  {% endif %}
+  {% if record.persons %}
+    {% for person in record.persons %}
+      {{ person.title }}
+    {% endfor %}
+  {% endif %}
+  {% if record.is_author %}
+    Автор
+  {% endif %}
+  {% if record.is_actor %}
+    Актер
+  {% endif %}
+  {% if record.is_illustrator %}
+    Художник
+  {% endif %}
+  {{ record.birthdate|ru_date }}
+  {% if record.deathdate %}
+    {{ record.deathdate|ru_date }}
+  {% endif %}
+ <img src="{{ record.photo|media }}" />
+ <h2> Биография </h2>
+ {{ record.bio|raw }}
+</div>
 {% endif %}

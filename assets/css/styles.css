@@ -3239,6 +3239,13 @@ p {
   margin-bottom: 37.3324px;
 }
 
+.subheader {
+  font-size: 23.9994px;
+  color: #999999;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
 .sidebar p {
   font-size: 15.9996px;
   color: #666666;
