@@ -11,16 +11,18 @@
   +desktop
     width: 320px
   &__logo
-    display: block
-    margin: 40px auto
+    +default
+      display: block
+      margin: 40px auto
   &__title
-    position: absolute
-    top: 90px
-    color: $color-main-light
-    font-size: unit(8, pts, px)
-    display: block
-    width: 100%
-    text-align: center
-    font-weight: 300
+    +default
+      position: absolute
+      top: 90px
+      color: $color-main
+      font-size: unit(8, pts, px)
+      display: block
+      width: 100%
+      text-align: center
+      font-weight: 300
     +desktop
       font-size: unit(10, pts, px)

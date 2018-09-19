@@ -1,0 +1,70 @@
+.main-menu
+  +default
+    display: flex
+    flex-direction: column
+    padding-bottom: 60px
+  &__item
+    +default
+      height: 50px
+      width: 100%
+      display: flex
+      align-content: space-around
+      color: $color-main-light
+      text-decoration: none
+  &__item-dropdown
+    +default
+      cursor: pointer
+  &__icon
+    +default
+      font-size: 20px
+      width: 20px
+      margin: 15px 0px 15px 20px
+  &__icon-dropdown
+    +default
+      font-size: 12px
+      margin: 22px 20px 
+      float: right
+      color: $color-second
+      transition: width .5s, height .5s, background-color .5s, transform .5s
+
+  .toggled>.main-menu__icon-dropdown
+    +default
+      transform-origin: center
+      transform: rotate(180deg)
+
+  ul, li
+    +default
+      list-style: none
+      padding: 0
+    
+    .inner
+      +default
+        overflow: hidden
+        display: none
+        background-color: rgba(0, 0, 0, 0.02)
+
+      &>.main-menu__item
+        +default 
+          padding-left: 10px
+      &>.inner>.main-menu__item 
+        +default
+          padding-left: 20px
+
+  li
+    &:hover
+      +default
+        background-color: rgba(0, 0, 0, 0.02)
+    
+  span
+    +default
+      font-size: unit(12, pts, px)
+      color: $color-main-light
+      line-height: 50px
+      display: flex
+      width: 100%
+      margin-left: 20px
+
+  .active
+    +default
+      background: url("../images/left-menu-hover.png") repeat-y
+      color: $color-main-light

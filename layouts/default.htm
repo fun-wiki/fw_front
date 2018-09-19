@@ -1,21 +1,23 @@
+﻿;;
+
 [session]
 security = "all"
 
 ==
+{##}
 
 <!DOCTYPE html>
 <html lang="ru" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
     <title>{{ page_title }} | Энциклопедия фантастических вселенных</title>
-    <!-- {название}: {подкатегория}: {категория}: Site name -->
     <meta name="description" content="">
     <meta name="title" content="{{ shema_type }}">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="OctoberCMS">
     <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.ico'|theme }}">
-    <link href="{{ ['assets/css/styles.css']|theme }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme }}">
     {% styles %}
   </head>
 
@@ -25,20 +27,12 @@ security = "all"
       <a href="/">
         <div class="main-logo">
           <div class="main-logo__logo">
-            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPCEtLSBDcmVhdG9yOiBDb3JlbERSQVcgWDggLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iODBweCIgaGVpZ2h0PSI0MHB4IiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIKdmlld0JveD0iMCAwIDgwIDQwIgogeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogPGRlZnM+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgPCFbQ0RBVEFbCiAgICAuZmlsMSB7ZmlsbDpyZWR9CiAgICAuZmlsMCB7ZmlsbDp3aGl0ZX0KICAgIC5maWwyIHtmaWxsOndoaXRlO2ZpbGwtcnVsZTpub256ZXJvfQogICBdXT4KICA8L3N0eWxlPgogPC9kZWZzPgogPGcgaWQ9IkxheWVyX3gwMDIwXzEiPgogIDxtZXRhZGF0YSBpZD0iQ29yZWxDb3JwSURfMENvcmVsLUxheWVyIi8+CiAgPGcgaWQ9Il8yNzg3MzUzNjg0NTEyIj4KICAgPHJlY3QgY2xhc3M9ImZpbDAiIHdpZHRoPSIzOS4wMDAzIiBoZWlnaHQ9IjQwLjAwMDQiLz4KICAgPHBhdGggY2xhc3M9ImZpbDEiIGQ9Ik0zOSA0MGwtMTAgMCAwIC04IDEwIDAgMCA4em0tMTUgMGwtMjQgMCAwIC00MGMxMywwIDI2LDAgMzksMCAwLDAgMCw4IDAsMThsLTE1IDAgMCAyMnptMTUgLTE3bDAgNSAtMTAgMCAwIC01IDEwIDB6bTAgLTIzbDAgMHoiLz4KICAgPHBvbHlnb24gY2xhc3M9ImZpbDIiIHBvaW50cz0iNjIsMTggNjcsMTggNzUsMzIgNzUsMTggODAsMTggODAsNDAgNzUsNDAgNjcsMjUgNjcsNDAgNjIsNDAgIi8+CiAgIDxwYXRoIGNsYXNzPSJmaWwyIiBkPSJNNDIgMThsNSAwIDAgMTNjMCwyIDEsNCA0LDQgMiwwIDMsLTIgMywtNGwwIC0xMyA1IDAgMCAxM2MwLDUgLTMsOSAtOCw5IC01LDAgLTksLTQgLTksLTlsMCAtMTN6Ii8+CiAgPC9nPgogPC9nPgo8L3N2Zz4K"
-              alt="logo">
+            <img src="{{ 'assets/images/logo.svg'|theme }}" alt="logo">
           </div>
-          <h1 class="main-logo__title">Энциклопедия фантастических вселенных</h1>
+          <div class="main-logo__title">Энциклопедия фантастических вселенных</div>
         </div>
       </a>
       <div class="main-nav">
-        <div class="quickinfo">
-          <img class="quickinfo__img" src="{{ 'assets/images/avatar_default.jpg'|theme }}" alt="username">
-          <div class="quickinfo__info">
-            <span>Добро пожаловать,</span>
-            <h2>Username</h2>
-          </div>
-        </div>
         <div class="main-menu">
           <ul>
             <li>
@@ -106,8 +100,7 @@ security = "all"
     <main>
       <nav class="navbar sticky-top">
         <a class="navbar__logo" href="index.html">
-          <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPCEtLSBDcmVhdG9yOiBDb3JlbERSQVcgWDggLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iODBweCIgaGVpZ2h0PSI0MHB4IiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIKdmlld0JveD0iMCAwIDgwIDQwIgogeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogPGRlZnM+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgPCFbQ0RBVEFbCiAgICAuZmlsMSB7ZmlsbDpyZWR9CiAgICAuZmlsMCB7ZmlsbDp3aGl0ZX0KICAgIC5maWwyIHtmaWxsOndoaXRlO2ZpbGwtcnVsZTpub256ZXJvfQogICBdXT4KICA8L3N0eWxlPgogPC9kZWZzPgogPGcgaWQ9IkxheWVyX3gwMDIwXzEiPgogIDxtZXRhZGF0YSBpZD0iQ29yZWxDb3JwSURfMENvcmVsLUxheWVyIi8+CiAgPGcgaWQ9Il8yNzg3MzUzNjg0NTEyIj4KICAgPHJlY3QgY2xhc3M9ImZpbDAiIHdpZHRoPSIzOS4wMDAzIiBoZWlnaHQ9IjQwLjAwMDQiLz4KICAgPHBhdGggY2xhc3M9ImZpbDEiIGQ9Ik0zOSA0MGwtMTAgMCAwIC04IDEwIDAgMCA4em0tMTUgMGwtMjQgMCAwIC00MGMxMywwIDI2LDAgMzksMCAwLDAgMCw4IDAsMThsLTE1IDAgMCAyMnptMTUgLTE3bDAgNSAtMTAgMCAwIC01IDEwIDB6bTAgLTIzbDAgMHoiLz4KICAgPHBvbHlnb24gY2xhc3M9ImZpbDIiIHBvaW50cz0iNjIsMTggNjcsMTggNzUsMzIgNzUsMTggODAsMTggODAsNDAgNzUsNDAgNjcsMjUgNjcsNDAgNjIsNDAgIi8+CiAgIDxwYXRoIGNsYXNzPSJmaWwyIiBkPSJNNDIgMThsNSAwIDAgMTNjMCwyIDEsNCA0LDQgMiwwIDMsLTIgMywtNGwwIC0xMyA1IDAgMCAxM2MwLDUgLTMsOSAtOCw5IC01LDAgLTksLTQgLTksLTlsMCAtMTN6Ii8+CiAgPC9nPgogPC9nPgo8L3N2Zz4K"
-            alt="logo">
+          <img src="{{ 'assets/images/logo.svg'|theme }}" alt="logo">
         </a>
         <div class="navbar__menu-button">
           <i class="fa fa-bars open_btn"></i>
@@ -179,7 +172,7 @@ security = "all"
   {% endif %}
 
   <!-- Custom Theme Scripts -->
-  <script src="{{ ['assets/js/main.js']|theme }}"></script>
+  <script type="text/javascript" src="{{ 'assets/js/main.js'|theme }}"></script>
   {% scripts %}
   </body>
 </html>
