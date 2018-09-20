@@ -25,17 +25,12 @@ function onStart()
   <div class="person__info">
     <h1> {{ record.title|person }} </h1>
     <div class="subheader"> {{ record.name }} </div>
-    {% if record.pseudos %}
-      <div class="infostring">Псевдонимы:
-      {% for pseudo in record.pseudos %}
-        <b>{{ pseudo.title|person }}</b>
-      {% endfor %}
-      </div>
-    {% endif %}
     {% if record.persons %}
+    <div class="infostring">Псевдонимы:
       {% for person in record.persons %}
-        {{ person.title|person }}
+        <b>{{ person.title|person }}</b>
       {% endfor %}
+    </div>
     {% endif %}
     <div class="infostring">
     {% if record.is_author %}
