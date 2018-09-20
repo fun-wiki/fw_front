@@ -1,4 +1,4 @@
-description = "2 колонки"
+﻿description = "2 колонки"
 
 [session]
 security = "all"
@@ -48,11 +48,11 @@ security = "all"
               </a>
             </li>
             <li>
-              <li class="main-menu__item main-menu__item-dropdown">
+              <ul class="main-menu__item main-menu__item-dropdown">
                 <i class="main-menu__icon fa"></i>
                 <span>Assassins Creed</span>
                 <i class="main-menu__icon-dropdown fa fa-chevron-down"></i>
-              </li>
+              </ul>
               <ul class="inner">
                 <a class="main-menu__item" href="universe.html">
                   <span>Главная</span>
@@ -72,11 +72,11 @@ security = "all"
               </ul>
             </li>
             <li>
-              <li class="main-menu__item main-menu__item-dropdown">
+              <ul class="main-menu__item main-menu__item-dropdown">
                 <i class="main-menu__icon fa"></i>
                 <span>Создатели</span>
                 <i class="main-menu__icon-dropdown fa fa-chevron-down"></i>
-              </li>
+              </ul>
               <ul class="inner">
                 <a class="main-menu__item" href="/authors">
                   <span>Авторы</span>
@@ -179,7 +179,7 @@ security = "all"
   {% endif %}
 
   <!-- Custom Theme Scripts -->
-  <script type="text/javascript" src="{{ 'assets/js/main.js'|theme }}"></script>
+  <script src="{{ 'assets/js/main.js'|theme }}"></script>
   {% scripts %}
   </body>
 </html>
