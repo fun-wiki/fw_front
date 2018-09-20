@@ -1,0 +1,46 @@
+.page
+  &__content
+    +default
+      display: grid
+      grid-template-columns: auto
+      grid-auto-rows: minmax(0px, auto)
+    +tablet
+      grid-template-columns: auto 40px 300px
+      grid-auto-rows: minmax(0px, auto)
+  &__main-content
+    +default
+      grid-column: 1
+      grid-row: 2
+    +tablet
+      grid-column: 1
+      grid-row: 1 / 10
+  &__sidebar
+    +default
+      grid-column: 1
+      grid-row: 1
+    +tablet 
+      grid-column: 3
+      grid-row: 1
+  &__advertisment
+    +default
+      grid-column: 1
+      grid-row: 4
+    +tablet 
+      grid-column: 3
+      grid-row: 3
+  &__add-sidebar
+    +default
+      grid-column: 1
+      grid-row: 3
+    +tablet 
+      grid-column: 3
+      grid-row: 2
+
+.sidebar-block
+  +default
+    padding-top: 20px
+    padding-bottom: 20px
+.sidebar-sticky-top
+  +default
+    position: sticky
+    top: 20px

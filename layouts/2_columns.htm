@@ -1,4 +1,4 @@
-description = "Базовый шаблон"
+description = "2 колонки"
 
 [session]
 security = "all"
@@ -108,7 +108,28 @@ security = "all"
       </nav>
       <div class="page__header"><span>{{ page_title }}</span></div>
       <div class="page__main">
-        {% page %}
+        <div class="two-columns">
+          <div class="page__content">
+
+            <div class="page__main-content">
+              {% page %}
+            </div>
+
+            <div class="page__sidebar">
+              {% if sidebar is defined %}
+                {% partial sidebar data=record %}
+              {% endif %}
+            </div>
+
+            <div class="page__advertisment sidebar-sticky-top">
+              <h3>Реклама</h3>
+              <img src="{{ 'assets/images/advertisment 300x500.jpg'|theme }}" alt="adv">
+            </div>
+
+            <div class="page__add-sidebar"></div>
+
+          </div>
+        </div>
       </div>
       <div class="page__footer">
         <div class="social-pages">
@@ -153,7 +174,7 @@ security = "all"
   </div>
   <div class="overlay"></div>
 
-  {% if shema_type is defined%}
+  {% if shema_type is defined %}
     {% partial shema_type data=record %}
   {% endif %}
 

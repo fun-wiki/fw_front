@@ -5,6 +5,7 @@
 // Mixins
 
 @import "utilites/mixins";
+@import "utilites/base"
 
 // Theme
 
@@ -21,15 +22,31 @@
 @import "layout/header";
 @import "layout/main";
 @import "layout/footer";
+@import "layout/typografy";
 
-// Header styles
+// Layout Header styles
 
 @import "layout/header/main-logo"
 @import "layout/header/main-nav"
 @import "layout/header/mob-nav"
 @import "layout/header/main-menu"
 
-// Footer styles
+// Layout Main styles
+
+@import "layout/main/page-header";
+@import "layout/main/page-main";
+@import "layout/main/page-footer";
+
+// Layout Footer styles
 
 @import "layout/footer/footer-copyright"
 @import "layout/footer/footer-menu"
+
+// Layouts variant
+
+@import "layout/main/main-default";
+@import "layout/main/main-2columns";
+
+// Pages style
+
+@import "pages/person";
