@@ -1,12 +1,9 @@
-;;
-
 title = "author"
 url = "/author/:slug"
 layout = "2_columns"
 is_hidden = 0
-
 ==
-
+<?php
 use fw\Backend\Models\Person as Person;
 
 function onStart()
@@ -16,7 +13,7 @@ function onStart()
     $this['page_title'] = "Автор";
     $this['record'] = Person::where('slug', '=', $this->param('slug'))->first();
 }
-
+?>
 ==
 {##}
 
@@ -46,9 +43,9 @@ function onStart()
     <div class="infostring">Дата рождения:
       <b>{{ record.birthdate|ru_date }}</b>
     </div>
-    {% if record.deathdate %}
+    {% if record.deathdata %}
     <div class="infostring">Дата смерти:
-      <b>{{ record.deathdate|ru_date }}</b>
+      <b>{{ record.deathdata|ru_date }}</b>
     </div>
     {% endif %}
   </div>
