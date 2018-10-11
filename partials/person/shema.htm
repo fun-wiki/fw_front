@@ -8,8 +8,8 @@
         "birthDate" : "{{ record.birthdate }}",
         "birthPlace" : "",
         "deathDate" : "",
-        "image": "",
-        "description" : "{{ record.bio }}",
+        "image": "{{ og_meta.image }}",
+        "description" : "{{ record.bio|slice(0, 160)|striptags }}",
         "url": ""
     }
 </script>

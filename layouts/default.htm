@@ -15,7 +15,7 @@ security = "all"
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="OctoberCMS">
-    {% partial "og_meta" data=record %}
+    {% partial "og_meta" %}
     <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.ico'|theme }}">
     <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme }}">
     {% styles %}
@@ -154,7 +154,7 @@ security = "all"
   <div class="overlay"></div>
 
   {% if shema_type is defined%}
-    {% partial shema_type data=record %}
+    {% partial shema_type %}
   {% endif %}
 
   <!-- Custom Theme Scripts -->

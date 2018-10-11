@@ -8,10 +8,16 @@ use fw\Backend\Models\Person as Person;
 
 function onStart()
 {
-    $this['shema_type'] = "person/shema";
-    $this['sidebar']    = "person/author/sidebar";
-    $this['page_title'] = "Автор";
+    // Get record
     $this['record'] = Person::where('slug', '=', $this->param('slug'))->first();
+
+    // SEO title
+    $this['page_title'] = $this['record']->title;
+
+    // Shema.org properties
+    $this['shema_type'] = "person/shema";
+    
+    // og_meta properties
     $this['og_meta'] = [
       "title" => $this['record']->title,
       "description" => $this['record']->bio,
@@ -19,6 +25,9 @@ function onStart()
       "type" => '',
       "url" =>  Request::url(),
     ];
+
+    // Sidebar
+    $this['sidebar'] = "person/author/sidebar";
 }
 ?>
 ==
