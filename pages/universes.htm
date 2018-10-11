@@ -1,0 +1,27 @@
+title = "universes"
+url = "/universes"
+layout = "default"
+is_hidden = 0
+
+==
+use fw\Backend\Models\Universe as Universe;
+
+function onStart()
+{
+    $this['page_title'] = "Вселенные";
+    $this['records'] = Universe::all();
+}
+==
+<ul class="record-list">
+    {% for record in records %}
+        <li>
+            {{ record.name }}
+            {{ record.slug }}
+            {{ record.cover }}
+            {{ record.genres }}
+            {% for person in record.persons %}
+              {{ person.title }}
+            {% endfor %}
+        </li>
+    {% endfor %}
+</ul>

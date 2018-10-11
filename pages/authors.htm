@@ -1,0 +1,22 @@
+title = "authors"
+url = "/authors"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "fw\Backend\Models\Person"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "author"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+==
+function onStart()
+{
+    $this['page_title'] = "Авторы";
+}
+==
+{% component 'builderList' %}

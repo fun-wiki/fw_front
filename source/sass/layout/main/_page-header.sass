@@ -1,5 +1,5 @@
 .page
-  &__title
+  &__header
     +default
       width: 100%
       border-right: 3px solid $color-second
@@ -8,6 +8,7 @@
       height: 40px
       margin: 15px 0
       display: block
+      box-sizing: border-box
     +tablet
       margin: 20px 0
       padding-right: 20px
@@ -16,9 +17,10 @@
       padding-right: 40px
 
     span
-      margin: 0 
-      padding: 0
-      font-size: unit(16, pts, px)
-      line-height: 60px
-      font-weight: 300
-      color: $color-main-light
+      +default
+        margin: 0 
+        padding: 0
+        font-size: unit(16, pts, px)
+        line-height: 60px
+        font-weight: 300
+        color: $color-main-light

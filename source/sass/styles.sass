@@ -2,49 +2,51 @@
 
 @import "utilites/reset";
 
-// mixins
+// Mixins
 
 @import "utilites/mixins";
+@import "utilites/base"
 
-// Color Shema
+// Theme
 
-//@import "themes/light";
 @import "themes/light";
 
 // Fonts
 
+@import "layout/fonts";
 @import "./node_modules/font-awesome/scss/font-awesome";
 
-// Main Layout
+// Layout
 
-@import "layout/base";
-@import "layout/fonts";
+@import "layout/layout";
 @import "layout/header";
 @import "layout/main";
 @import "layout/footer";
+@import "layout/typografy";
 
+// Layout Header styles
 
-// Components
+@import "layout/header/main-logo"
+@import "layout/header/main-nav"
+@import "layout/header/mob-nav"
+@import "layout/header/main-menu"
 
-@import "components/main-logo";
-@import "components/main-nav";
-@import "components/quickinfo";
-@import "components/main-menu";
-@import "components/mob-nav";
-@import "components/footer-copyright";
-@import "components/footer-menu";
-@import "components/page-title";
-@import "components/page-content";
-@import "components/page-footer";
+// Layout Main styles
 
-@import "components/inline-info";
-@import "components/inline-item";
+@import "layout/main/page-header";
+@import "layout/main/page-main";
+@import "layout/main/page-footer";
 
-// Page components
+// Layout Footer styles
 
-@import "components/universe-cover";
-@import "components/content";
+@import "layout/footer/footer-copyright"
+@import "layout/footer/footer-menu"
 
-@import "components/universes-card";
+// Layouts variant
 
-@import "components/vue";
+@import "layout/main/main-default";
+@import "layout/main/main-2columns";
+
+// Pages style
+
+@import "pages/person";
