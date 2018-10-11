@@ -12,6 +12,13 @@ function onStart()
     $this['sidebar']    = "person/author/sidebar";
     $this['page_title'] = "Автор";
     $this['record'] = Person::where('slug', '=', $this->param('slug'))->first();
+    $this['og_meta'] = [
+      "title" => $this['record']->title,
+      "description" => $this['record']->bio,
+      "image" => Url::to('storage/app/media',$this['record']->photo),
+      "type" => '',
+      "url" =>  Request::url(),
+    ];
 }
 ?>
 ==
