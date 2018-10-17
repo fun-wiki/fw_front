@@ -1,6 +1,8 @@
+;;
+
 title = "universes"
 url = "/universes"
-layout = "default"
+layout = "2_columns"
 is_hidden = 0
 
 ==
@@ -9,19 +11,32 @@ use fw\Backend\Models\Universe as Universe;
 function onStart()
 {
     $this['page_title'] = "Вселенные";
-    $this['records'] = Universe::all();
+    $this['records'] = Universe::orderBy('name', 'asc')->get();
 }
 ==
-<ul class="record-list">
-    {% for record in records %}
-        <li>
-            {{ record.name }}
-            {{ record.slug }}
-            {{ record.cover }}
-            {{ record.genres }}
-            {% for person in record.persons %}
-              {{ person.title }}
-            {% endfor %}
-        </li>
-    {% endfor %}
-</ul>
+{##}
+
+{% set last_char = '' %}
+{% for record in records %}
+  {% set this_char = record.name|first|upper %}
+  {% if this_char != last_char %}
+    {% if last_char != '' %}
+      </div>
+    {% endif %}
+    {% set last_char = this_char%}
+    <h2> {{ this_char }} </h2>
+    <div class="card_list">
+  {% endif %}
+  <div class="card">
+    <a href="/{{ record.slug }}">
+      <div class="card__image">
+        <img src="{{ record.cover|media }}" alt="{{ record.name }}" />
+      </div>
+      <div class="card__content">
+       <h3>{{ record.name }}</h3>
+       <div class="subheader"> {{ record.name_translate }} </div>
+      </div>
+    </a>
+  </div>
+{% endfor %}
+</div>
