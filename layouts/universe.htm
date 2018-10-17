@@ -1,0 +1,193 @@
+﻿description = "Universe"
+
+[session]
+security = "all"
+==
+{##}
+
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page_title }} | Энциклопедия фантастических вселенных</title>
+    <meta name="description" content="">
+    <meta name="title" content="{{ shema_type }}">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="OctoberCMS">
+    {% partial "og_meta" %}
+    <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.ico'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme }}">
+    {% styles %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127342457-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127342457-1');
+    </script>
+
+  </head>
+
+  <body>
+    <div class="wrapper" id="app">
+    <header>
+      <a href="/">
+        <div class="main-logo">
+          <div class="main-logo__logo">
+            <img src="{{ 'assets/images/logo.svg'|theme }}" alt="logo">
+          </div>
+          <div class="main-logo__title">Энциклопедия фантастических вселенных</div>
+        </div>
+      </a>
+      <div class="main-nav">
+        <div class="main-menu">
+          <ul>
+            <li>
+              <a class="main-menu__item active" href="index.html">
+                <i class="main-menu__icon fa icon-news"></i>
+                <span>Новости</span>
+              </a>
+            </li>
+            <li>
+              <a class="main-menu__item" href="/universes">
+                <i class="main-menu__icon fa"></i>
+                <span>Вселенные</span>
+              </a>
+            </li>
+            <li>
+              <ul class="main-menu__item main-menu__item-dropdown">
+                <i class="main-menu__icon fa"></i>
+                <span>Assassins Creed</span>
+                <i class="main-menu__icon-dropdown fa fa-chevron-down"></i>
+              </ul>
+              <ul class="inner">
+                <a class="main-menu__item" href="universe.html">
+                  <span>Главная</span>
+                </a>
+                <li class="main-menu__item">
+                  <span>Книги</span>
+                </li>
+                <li class="main-menu__item">
+                  <span>Игры</span>
+                </li>
+                <li class="main-menu__item">
+                  <span>Фильмы</span>
+                </li>
+                <li class="main-menu__item">
+                  <span>Энциклопедия</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul class="main-menu__item main-menu__item-dropdown">
+                <i class="main-menu__icon fa"></i>
+                <span>Создатели</span>
+                <i class="main-menu__icon-dropdown fa fa-chevron-down"></i>
+              </ul>
+              <ul class="inner">
+                <a class="main-menu__item" href="/authors">
+                  <span>Авторы</span>
+                </a>
+                <li class="main-menu__item">
+                  <span>Компании</span>
+                </li>
+              </ul>
+            </li>            
+            <li>
+              <a class="main-menu__item" href="/design">
+                <i class="main-menu__icon fa fa-css3"></i>
+                <span>Дизайн</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <i class="fa fa-close close_btn"></i>
+      </div>
+    </header>
+    <main>
+      <nav class="navbar sticky-top">
+        <a class="navbar__logo" href="index.html">
+          <img src="{{ 'assets/images/logo.svg'|theme }}" alt="logo">
+        </a>
+        <div class="navbar__menu-button">
+          <i class="fa fa-bars open_btn"></i>
+        </div>
+      </nav>
+      {% page %}
+      <div class="page__main">
+        <div class="two-columns">
+          <div class="page__content">
+
+            <div class="page__main-content">
+              {% partial 'universe/main' %}
+            </div>
+
+            <div class="page__sidebar">
+              {% partial 'universe/info' %}
+            </div>
+
+            <div class="page__advertisment sidebar-sticky-top">
+              <h3>Реклама</h3>
+              <img src="{{ 'assets/images/advertisment 300x500.jpg'|theme }}" alt="adv">
+            </div>
+
+            <div class="page__add-sidebar"></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="page__footer">
+        <div class="social-pages">
+          <div class="social-pages__text">Присоединяйтесь к нам</div>
+          <div class="social-pages__button">
+            <a class="social-button facebook icon-facebook" href="{{ this.theme.facebook }}"></a>
+            <a class="social-button vk icon-vkontakte" href="{{ this.theme.vk }}"></a>
+            <a class="social-button twitter icon-twitter" href="{{ this.theme.twitter }}"></a>
+            <a class="social-button googleplus icon-google" href="{{ this.theme.googleplus }}"></a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-copyright">
+        <div class="footer-copyright__text">
+          <span>
+            <strong>F.UN</strong>&nbsp;&nbsp;by&nbsp;&nbsp;
+            <strong>CRYDE</strong>sig
+            <strong>N</strong>. 2015-2018
+          </span>
+        </div>
+      </div>
+      <div class="footer-menu">
+        <a class="footer-menu__button" href="#">
+          <i class="fa fa-plus"></i>
+        </a>
+        <a class="footer-menu__button active" href="#">
+          <i class="fa icon-edit"></i>
+        </a>
+        <a class="footer-menu__button" href="#">
+          <i class="fa icon-star"></i>
+        </a>
+        <a class="footer-menu__button" href="#">
+          <i class="fa fa-users"></i>
+        </a>
+        <a class="footer-menu__button" href="#">
+          <i class="fa fa-cog"></i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <div class="overlay"></div>
+
+  {% if shema_type is defined %}
+    {% partial shema_type %}
+  {% endif %}
+
+  <!-- Custom Theme Scripts -->
+  <script src="{{ 'assets/js/main.js'|theme }}"></script>
+  {% scripts %}
+  </body>
+</html>

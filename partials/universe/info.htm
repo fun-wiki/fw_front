@@ -1,0 +1,21 @@
+{##}
+
+<div class="infostring">
+  Год создания: <b>{{ record.created_year }}</b>
+</div>
+
+<div class="infostring">
+  Создатели: <b>
+  {% for person in record.persons %}
+    {{ person.title }}
+  {% endfor %}
+  </b>
+</div>
+
+<div class="infostring">
+  Жанр: <b>
+  {% for genre in record.genres %}
+    {{ genre.title }}
+  {% endfor %}
+  </b>
+</div>
