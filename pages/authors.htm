@@ -1,22 +1,35 @@
 title = "authors"
 url = "/authors"
-layout = "default"
+layout = "2_columns"
 is_hidden = 0
-
-[builderList]
-modelClass = "fw\Backend\Models\Person"
-scope = "-"
-scopeValue = "{{ :scope }}"
-displayColumn = "title"
-noRecordsMessage = "No records found"
-detailsPage = "author"
-detailsKeyColumn = "slug"
-detailsUrlParameter = "slug"
-pageNumber = "{{ :page }}"
 ==
+<?php
+use Fw\Backend\Models\Person as Person;
+
 function onStart()
 {
     $this['page_title'] = "Авторы";
+
+    $this['records'] = Person::where('is_author', '=', 1)->orderBy('title', 'asc')->get();
+    //dump($this['records']);
 }
+?>
 ==
-{% component 'builderList' %}
+{% set last_char = '' %}
+{% for record in records %}
+  {% set this_char = record.title|first|upper %}
+  {% if this_char != last_char %}
+    {% if last_char != '' %}
+      </div>
+    {% endif %}
+    {% set last_char = this_char%}
+    <h2> {{ this_char }} </h2>
+    <div class="list">
+  {% endif %}
+  <div class="list_item">
+    <a href="/author/{{record.slug}}">
+      {{ record.title }}
+    </a>
+  </div>
+{% endfor %}
+</div>
