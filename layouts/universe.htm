@@ -7,32 +7,37 @@ security = "all"
 
 <!DOCTYPE html>
 <html lang="ru" prefix="og: http://ogp.me/ns#">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page_title }} | Энциклопедия фантастических вселенных</title>
-    <meta name="description" content="">
-    <meta name="title" content="{{ shema_type }}">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="OctoberCMS">
-    {% partial "og_meta" %}
-    <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.ico'|theme }}">
-    <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme }}">
-    {% styles %}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127342457-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-127342457-1');
-    </script>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_title }} | Энциклопедия фантастических вселенных</title>
+  <meta name="description" content="">
+  <meta name="title" content="{{ shema_type }}">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="OctoberCMS">
+  <meta name="yandex-verification" content="e3c30139329d41e4" />
+  {% partial "og_meta" %}
+  <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.ico'|theme }}">
+  <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme }}">
+  {% styles %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127342457-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  </head>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-  <body>
-    <div class="wrapper" id="app">
+    gtag('config', 'UA-127342457-1');
+  </script>
+
+</head>
+
+<body>
+  <div class="wrapper" id="app">
     <header>
       <a href="/">
         <div class="main-logo">
@@ -95,7 +100,7 @@ security = "all"
                   <span>Компании</span>
                 </li>
               </ul>
-            </li>            
+            </li>
             <li>
               <a class="main-menu__item" href="/design">
                 <i class="main-menu__icon fa fa-css3"></i>
@@ -183,11 +188,12 @@ security = "all"
   <div class="overlay"></div>
 
   {% if shema_type is defined %}
-    {% partial shema_type %}
+  {% partial shema_type %}
   {% endif %}
 
   <!-- Custom Theme Scripts -->
   <script src="{{ 'assets/js/main.js'|theme }}"></script>
   {% scripts %}
-  </body>
+</body>
+
 </html>
