@@ -1,42 +1,44 @@
 .main-menu
   +default
+    max-width: 100%
     display: flex
     flex-direction: column
     padding-bottom: 60px
   &__item
     +default
       height: 50px
-      width: 100%
+      min-width: 100%
       display: flex
-      align-content: space-around
+      flex-direction: row
+      justify-content: flex-start
       color: $color-main-light
       text-decoration: none
+      line-height: 50px
   &__item-dropdown
     +default
+      min-width: 100%
       cursor: pointer
   &__icon
     +default
       font-size: 20px
       width: 20px
-      margin: 15px 0px 15px 20px
+      margin: 15px 20px 15px 20px
   &__icon-dropdown
     +default
       font-size: 12px
       margin: 22px 20px 
-      float: right
       color: $color-second
       transition: width .5s, height .5s, background-color .5s, transform .5s
+      margin-left: auto
 
-  .toggled>.main-menu__icon-dropdown
-    +default
-      transform-origin: center
-      transform: rotate(180deg)
+  .toggled
+    .main-menu__icon-dropdown
+      +default
+        transform-origin: center
+        transform: rotate(180deg)
 
   ul, li
-    +default
-      list-style: none
-      padding: 0
-    
+   
     .inner
       +default
         overflow: hidden
@@ -45,10 +47,10 @@
 
       &>.main-menu__item
         +default 
-          padding-left: 10px
+          padding-left: 60px
       &>.inner>.main-menu__item 
         +default
-          padding-left: 20px
+          padding-left: 100px
 
   li
     &:hover
