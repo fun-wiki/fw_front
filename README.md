@@ -1,3 +1,3 @@
 # fun-wiki
-front-end theme by fun-wiki site
 
+front-end theme by fun-wiki.ru site
