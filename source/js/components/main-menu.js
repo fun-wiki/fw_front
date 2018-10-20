@@ -1,4 +1,4 @@
-$('.main-menu__item-dropdown').click(function(e) {
+$('.dropdown').click(function(e) {
   	e.preventDefault();
 
     var $this = $(this);

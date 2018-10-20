@@ -11,6 +11,10 @@ function onStart()
     // Get record
     $this['record'] = Universe::where('slug', '=', $this->param('slug'))->first();
 
+    if ($this['record'] == null) {
+      return \Redirect::to('404');
+    };
+    //dump($this['record']);
     // SEO title
     $this['page_title'] = $this['record']->name;
 
