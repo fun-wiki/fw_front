@@ -26,18 +26,6 @@ security = "all"
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i&amp;subset=cyrillic-ext" rel="stylesheet">
   <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme }}">
   {% styles %}
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127342457-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-127342457-1');
-  </script>
 
 </head>
 
@@ -69,6 +57,7 @@ security = "all"
   {% endif %}
 
   <script src="{{ 'assets/js/main.js'|theme }}"></script>
+  {% partial "googletag" %}
   {% scripts %}
 
 </body>
