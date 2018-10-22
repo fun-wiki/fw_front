@@ -1,6 +1,6 @@
 title = "author"
 url = "/author/:slug"
-layout = "2_columns"
+layout = "default"
 is_hidden = 0
 ==
 <?php
@@ -11,10 +11,7 @@ function onStart()
     // Get record
     $this['record'] = Person::where('slug', '=', $this->param('slug'))->first();
 
-    
-
     if ($this['record']->is_pseudo ) {
-      //dump($this['record']->pseudos[0]->slug);
       return Redirect::to('author/'.$this['record']->pseudos[0]->slug);
     }
 
@@ -40,53 +37,70 @@ function onStart()
 ==
 {##}
 
-{% if record %}
-{% if record.is_pseudo %}
+{% partial 'layout/page-title' %}
+<div class="page__main">
+  <div class="two-columns">
+    <div class="page__content">
+      <div class="page__main-content">
+        {% if record %}
+        <div class="person">
+          <div class="person__info">
+            <h1> {{ record.title|person }} </h1>
+            <div class="subheader">
+              {% if record.name_translate is not empty %}
+              {{ record.name_translate }}
+              {% else %}
+              {{ record.name }}
+              {% endif %}
+            </div>
+            <div class="infostring">
+              {% if record.is_author %}
+              Автор
+              {% endif %}
+              {% if record.is_actor %}
+              Актер
+              {% endif %}
+              {% if record.is_illustrator %}
+              Художник
+              {% endif %}
+            </div>
+            {% if record.persons is not empty %}
+            <div class="infostring">Псевдонимы:
+              {% for person in record.persons %}
+              <b>{{ person.title|person }}</b>
+              {% endfor %}
+            </div>
+            {% endif %}
+            <div class="infostring">Дата рождения:
+              <b>{{ record.birthdate|ru_date }}</b>
+            </div>
+            {% if record.deathdata %}
+            <div class="infostring">Дата смерти:
+              <b>{{ record.deathdata|ru_date }}</b>
+            </div>
+            {% endif %}
+          </div>
+          <div class="person__photo">
+            <img src="{{ record.photo|media }}" />
+          </div>
+        </div>
 
-{% endif %}
-<div class="person">
-  <div class="person__info">
-    <h1> {{ record.title|person }} </h1>
-    <div class="subheader"> 
-    {% if record.name_translate is not empty %}
-      {{ record.name_translate }}
-    {% else %}
-      {{ record.name }} 
-    {% endif %}
+        <h2>Биография</h2>
+        {{ record.bio|raw }}
+
+        {% endif %}
+      </div>
+
+      <div class="page__sidebar">
+        {% if sidebar is defined %}
+        {% partial sidebar %}
+        {% endif %}
+      </div>
+
+      {% partial 'layout/advertisment-sidebar' %}
+
+      <div class="page__add-sidebar"></div>
+
     </div>
-    <div class="infostring">
-    {% if record.is_author %}
-      Автор
-    {% endif %}
-    {% if record.is_actor %}
-      Актер
-    {% endif %}
-    {% if record.is_illustrator %}
-      Художник
-    {% endif %}
-    </div>
-    {% if record.persons  is not empty %}
-    <div class="infostring">Псевдонимы:
-      {% for person in record.persons %}
-        <b>{{ person.title|person }}</b>
-      {% endfor %}
-    </div>
-    {% endif %}
-    <div class="infostring">Дата рождения:
-      <b>{{ record.birthdate|ru_date }}</b>
-    </div>
-    {% if record.deathdata %}
-    <div class="infostring">Дата смерти:
-      <b>{{ record.deathdata|ru_date }}</b>
-    </div>
-    {% endif %}
-  </div>
-  <div class="person__photo">
-    <img src="{{ record.photo|media }}" />
   </div>
 </div>
-
-<h2>Биография</h2>
-{{ record.bio|raw }}
-
-{% endif %}
