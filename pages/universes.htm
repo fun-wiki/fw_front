@@ -2,7 +2,7 @@
 
 title = "universes"
 url = "/universes"
-layout = "2_columns"
+layout = "default"
 is_hidden = 0
 
 ==
@@ -10,33 +10,53 @@ use fw\Backend\Models\Universe as Universe;
 
 function onStart()
 {
-    $this['page_title'] = "Вселенные";
-    $this['records'] = Universe::orderBy('name', 'asc')->get();
+$this['page_title'] = "Вселенные";
+$this['records'] = Universe::orderBy('name', 'asc')->get();
 }
 ==
 {##}
 
-{% set last_char = '' %}
-{% for record in records %}
-  {% set this_char = record.name|first|upper %}
-  {% if this_char != last_char %}
-    {% if last_char != '' %}
+{% partial 'layout/page-title' %}
+<div class="page__main">
+  <div class="two-columns">
+    <div class="page__content">
+      <div class="page__main-content">
+        {% set last_char = '' %}
+        {% for record in records %}
+          {% set this_char = record.name|first|upper %}
+          {% if this_char != last_char %}
+            {% if last_char != '' %}
+              </div>
+            {% endif %}
+            {% set last_char = this_char%}
+            <h2> {{ this_char }} </h2>
+            <div class="card_list">
+          {% endif %}
+          <div class="card">
+            <a href="/{{ record.slug }}">
+              <div class="card__image">
+                <img src="{{ record.cover|media }}" alt="{{ record.name }}" />
+              </div>
+              <div class="card__content">
+                <h3>{{ record.name }}</h3>
+                <div class="subheader"> {{ record.name_translate }} </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
       </div>
-    {% endif %}
-    {% set last_char = this_char%}
-    <h2> {{ this_char }} </h2>
-    <div class="card_list">
-  {% endif %}
-  <div class="card">
-    <a href="/{{ record.slug }}">
-      <div class="card__image">
-        <img src="{{ record.cover|media }}" alt="{{ record.name }}" />
-      </div>
-      <div class="card__content">
-       <h3>{{ record.name }}</h3>
-       <div class="subheader"> {{ record.name_translate }} </div>
-      </div>
-    </a>
+    </div>
+
+    <div class="page__sidebar">
+      {% if sidebar is defined %}
+      {% partial sidebar data=record %}
+      {% endif %}
+    </div>
+
+    {% partial 'layout/advertisment-sidebar' %}
+
+    <div class="page__add-sidebar"></div>
+
   </div>
-{% endfor %}
+</div>
 </div>
