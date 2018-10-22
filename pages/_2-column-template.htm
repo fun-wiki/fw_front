@@ -1,0 +1,40 @@
+title = "authors"
+url = "/authors"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use Fw\Backend\Models\Person as Person;
+
+function onStart()
+{
+    $this['page_title'] = "Авторы";
+
+    $this['records'] = Person::where('is_author', '=', 1)->orderBy('title', 'asc')->get();
+
+}
+?>
+==
+{% partial 'layout/page-title' %}
+<div class="page__main">
+  <div class="two-columns">
+    <div class="page__content">
+      <div class="page__main-content">
+        {% page %}
+      </div>
+
+      <div class="page__sidebar">
+        {% if sidebar is defined %}
+        {% partial sidebar data=record %}
+        {% endif %}
+      </div>
+
+      {% partial 'layout/advertisment-sidebar' %}
+
+      <div class="page__add-sidebar"></div>
+
+      <div class="page__add-sidebar"></div>
+
+    </div>
+  </div>
+</div>
