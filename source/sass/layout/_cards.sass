@@ -1,22 +1,28 @@
 .card_list
   +default
     display: flex
+    flex-wrap: wrap
     width: 100%
-    margin-right: 10px
-    justify-content: space-between
+  +tablet 
+    margin-left: -10px
+    width: calc(100% + 10px)
+  +laptop
+    margin-left: -20px
+    width: calc(100% + 20px)
     
 .card
   +default
+    min-width: 260px
+    max-width: 530px
     width: 100%
     display: flex
     flex-direction: column
     margin-bottom: 20px
-
+    flex: 1
   +tablet
-    max-width: calc(50% - 10px)
-  +desktop
-    min-width: 33%
-    max-width: 33%
+    padding-left: 10px
+  +laptop
+    padding-left: 20px
 
   &__image
     +default
