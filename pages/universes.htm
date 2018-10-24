@@ -35,7 +35,7 @@ $this['records'] = Universe::orderBy('name', 'asc')->get();
           <div class="card">
             <a href="/{{ record.slug }}">
               <div class="card__image">
-                <img src="{{ record.cover|media }}" alt="{{ record.name }}" />
+                <img src="{{ record.cover|media|resize(530) }}" alt="{{ record.name }}" />
               </div>
               <div class="card__content">
                 <h3>{{ record.name }}</h3>
