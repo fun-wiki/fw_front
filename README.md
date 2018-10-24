@@ -4,4 +4,4 @@ front-end theme by fun-wiki.ru site
 
 ## TO-DO
 
-[ ] - fix mobile view
+- [ ] - fix mobile view
