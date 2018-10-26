@@ -13,5 +13,7 @@ new Vue({
 })
 
 require('./components/main-menu.js')
-require('./components/font_loader.js')
+// require('./components/font_loader.js')
 require('./components/navigation.js')
+require('./components/card_resizer.js')
+require('./components/service-worker.js')

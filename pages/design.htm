@@ -8,32 +8,42 @@ is_hidden = 0
 ==
 function onStart()
 {
-    $this['page_title'] = "Дизайн";
 }
 ==
 {##}
 
-<h1> Header #1 </h1>
-<div class="subheader">Subheader</div>
-<h2> Header #2 </h2>
-<h3> Header #3 </h3>
-</br>
-<div class="infostring">Инфо: <b>String1</b></div>
-<div class="infostring">Инфо: <b>String2</b></div>
-<div class="infostring">Инфо: <b>String3</b></div>
-<div class="infostring">Инфо: <b>String4</b></div>
-<p>
-Lorem ipsum dolor <b>sit amet consectetur adipisicing elit.</b> Vel libero sunt error ipsum, adipisci quidem in magnam. Nostrum itaque, nihil qui esse eius, quasi a accusantium id recusandae modi non.
-</p>
-<p>
-Accusamus maiores nobis aliquam culpa! Doloremque modi ipsa veritatis recusandae nostrum iure sint, autem rem eum nihil? Harum, deserunt ipsum voluptatibus doloribus quae, magnam ea distinctio tenetur perferendis enim fuga.
-</p>
-<p>
-Deleniti incidunt dolores vitae, recusandae eveniet doloribus vel consequuntur dolorem quisquam, accusamus, voluptate beatae excepturi distinctio veniam quidem quos voluptas ipsam dolore? Facilis ipsum voluptatibus totam quam iusto. Deserunt, pariatur!
-</p>
-<p>
-Praesentium vitae iusto magnam error, obcaecati enim cum perferendis. Eligendi, asperiores possimus. Vero error nihil odio illum quae assumenda deserunt reprehenderit. Veritatis rerum inventore eius dolor itaque nam mollitia assumenda?
-</p>
-<p>
-Neque rem maxime impedit libero, magni animi aperiam nulla laboriosam. Incidunt blanditiis voluptatibus magni quae quia odio corrupti aliquam praesentium maxime, labore in doloremque commodi, dicta eum neque, fugit molestiae!
-</p>
+{% partial 'layout/page-title' page_title='Дизайн' %}
+
+<div class="page__main">
+  <h1> Header #1 </h1>
+  <div class="subheader">Subheader</div>
+  <h2> Header #2 </h2>
+  <h3> Header #3 </h3>
+  </br>
+  <div class="infostring">Инфо: <b>String1</b></div>
+  <div class="infostring">Инфо: <b>String2</b></div>
+  <div class="infostring">Инфо: <b>String3</b></div>
+  <div class="infostring">Инфо: <b>String4</b></div>
+  <p>
+    Lorem ipsum dolor <b>sit amet consectetur adipisicing elit.</b> Vel libero sunt error ipsum, adipisci quidem in
+    magnam. Nostrum itaque, nihil qui esse eius, quasi a accusantium id recusandae modi non.
+  </p>
+  <p>
+    Accusamus maiores nobis aliquam culpa! Doloremque modi ipsa veritatis recusandae nostrum iure sint, autem rem eum
+    nihil? Harum, deserunt ipsum voluptatibus doloribus quae, magnam ea distinctio tenetur perferendis enim fuga.
+  </p>
+  <p>
+    Deleniti incidunt dolores vitae, recusandae eveniet doloribus vel consequuntur dolorem quisquam, accusamus,
+    voluptate beatae excepturi distinctio veniam quidem quos voluptas ipsam dolore? Facilis ipsum voluptatibus totam
+    quam iusto. Deserunt, pariatur!
+  </p>
+  <p>
+    Praesentium vitae iusto magnam error, obcaecati enim cum perferendis. Eligendi, asperiores possimus. Vero error
+    nihil odio illum quae assumenda deserunt reprehenderit. Veritatis rerum inventore eius dolor itaque nam mollitia
+    assumenda?
+  </p>
+  <p>
+    Neque rem maxime impedit libero, magni animi aperiam nulla laboriosam. Incidunt blanditiis voluptatibus magni quae
+    quia odio corrupti aliquam praesentium maxime, labore in doloremque commodi, dicta eum neque, fugit molestiae!
+  </p>
+</div>

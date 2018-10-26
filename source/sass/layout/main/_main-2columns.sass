@@ -5,7 +5,7 @@
       grid-template-columns: auto
       grid-auto-rows: minmax(0px, auto)
     +tablet
-      grid-template-columns: auto 40px 300px
+      grid-template-columns: calc(100% - 340px) 40px 300px
       grid-auto-rows: minmax(0px, auto)
   &__main-content
     +default
@@ -15,6 +15,9 @@
       grid-column: 1
       grid-row: 1 / 10
   &__sidebar
+    h3
+      &:first-child
+        margin-top: 0
     +default
       grid-column: 1
       grid-row: 1
@@ -39,7 +42,10 @@
 .sidebar-block
   +default
     padding-top: 20px
-    padding-bottom: 20px
+  +tablet
+    padding-top: 40px
+
+
 .sidebar-sticky-top
   +default
     position: sticky

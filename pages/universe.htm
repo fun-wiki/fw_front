@@ -1,6 +1,6 @@
 title = "universe"
 url = "/:slug"
-layout = "universe"
+layout = "default"
 is_hidden = 0
 ==
 <?php
@@ -14,7 +14,7 @@ function onStart()
     if ($this['record'] == null) {
       return \Redirect::to('404');
     };
-    //dump($this['record']);
+
     // SEO title
     $this['page_title'] = $this['record']->name;
 
@@ -44,5 +44,24 @@ function onStart()
   <div class="universe-cover__shadow"></div>
   <div class="universe-cover__logo">
     <img src="{{ record.logo|media }}" alt="{{ record.name }} logo">
+  </div>
+</div>
+<div class="page__main">
+  <div class="two-columns">
+    <div class="page__content">
+
+      <div class="page__main-content">
+        {% partial 'universe/main' %}
+      </div>
+
+      <div class="page__sidebar">
+        {% partial 'universe/info' %}
+      </div>
+
+      {% partial 'layout/advertisment-sidebar' %}
+
+      <div class="page__add-sidebar"></div>
+
+    </div>
   </div>
 </div>
