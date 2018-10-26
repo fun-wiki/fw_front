@@ -1,3 +1,15 @@
+title = "manifest"
+url = "/manifest.json"
+is_hidden = 0
+==
+<?php
+function onStart() {
+  $content = $this->page->markup;
+  return Response::make($content)->header('Content-Type', 'application/json');
+}
+?>
+==
+
 {
   "lang": "ru",
   "name": "Энциклопедия фантастических вселенных",
@@ -16,7 +28,7 @@
   ],
   "theme_color": "#2C2F34",
   "background_color": "#2C2F34",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "orientation": "natural"
 }
