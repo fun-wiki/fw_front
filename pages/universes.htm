@@ -32,16 +32,18 @@ $this['records'] = Universe::orderBy('name', 'asc')->get();
             <h2> {{ this_char }} </h2>
             <div class="card_list">
           {% endif %}
-          <div class="card">
-            <a href="/{{ record.slug }}">
-              <div class="card__image">
-                <img src="{{ record.cover|media|resize(530) }}" alt="{{ record.name }}" />
-              </div>
-              <div class="card__content">
-                <h3>{{ record.name }}</h3>
-                <div class="subheader"> {{ record.name_translate }} </div>
-              </div>
-            </a>
+          <div class="card-item card">
+            <div class="">
+              <a href="/{{ record.slug }}">
+                <div class="card__image">
+                  <img src="{{ record.cover|media|resize(530) }}" alt="{{ record.name }}" />
+                </div>
+                <div class="card__content">
+                  <h4>{{ record.name }}</h4>
+                  <div class="h4-subtitle"> {{ record.name_translate }} </div>
+                </div>
+              </a>
+            </div>
           </div>
         {% endfor %}
       </div>
