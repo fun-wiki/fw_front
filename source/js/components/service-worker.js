@@ -1,11 +1,9 @@
-if (navigator.serviceWorker.controller) {
-    console.log('[PWA Builder] active service worker found, no need to register')
-} else {
-
-    //Register the ServiceWorker
-    navigator.serviceWorker.register('sw.js', {
-        scope: './'
-    }).then(function (reg) {
-        console.log('Service worker has been registered for scope:' + reg.scope);
-    });
+// Проверка того, что наш браузер поддерживает Service Worker API.
+if ('serviceWorker' in navigator) {
+    // Весь код регистрации у нас асинхронный.
+    navigator.serviceWorker.register('./sw.jsx')
+        .then(() => navigator.serviceWorker.ready.then((worker) => {
+            worker.sync.register('syncdata');
+        }))
+        .catch((err) => console.log(err));
 }
