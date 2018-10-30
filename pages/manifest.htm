@@ -1,0 +1,32 @@
+title = "manifest"
+url = "/manifest.json"
+is_hidden = 0
+==
+<?php
+function onStart() {
+  $content = $this->page->markup;
+  return Response::make($content)->header('Content-Type', 'application/json');
+}
+?>
+==
+
+{
+  "name": "Энциклопедия фантастических вселенных",
+  "short_name": "FUN",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2C2F34",
+  "theme_color": "#2C2F34",
+  "icons": [
+    {
+      "src": "\/themes\/fun-wiki\/assets\/images\/icons\/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image\/png"
+    },
+    {
+      "src": "\/themes\/fun-wiki\/assets\/images\/icons\/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image\/png"
+    }
+  ]
+}

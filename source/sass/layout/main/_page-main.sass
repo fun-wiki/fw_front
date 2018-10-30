@@ -11,3 +11,16 @@
       min-height: calc(100vh - 240px)
     +desktop
       margin: 0 40px 0 80px
+  
+    &-full
+      +default
+        width: calc(100% + 30px)
+        margin: 0 -15px
+      +laptop
+        width: calc(100% + 80px)
+        margin: 0 -40px
+      +desktop
+        width: calc(100% + 120px)
+        margin: 0 -40px 0 -80px
+      img 
+        width: 100%
